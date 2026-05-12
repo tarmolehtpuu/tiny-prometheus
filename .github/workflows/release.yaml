@@ -1,0 +1,58 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  JAVA_VERSION: 25
+  JAVA_DIST: zulu
+  JAVA_ARCH: x64
+
+permissions:
+  packages: write
+  contents: write
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JAVA_DIST }}
+          architecture: ${{ env.JAVA_ARCH }}
+
+      - name: Build
+        run: ./gradlew check jar
+
+      - name: Update badges
+        uses: gaelgirodon/ci-badges-action@v1
+        with:
+          gist-id: c4dcc625848d9d5fe24d9671308939e4
+          token: ${{ secrets.GIST_TOKEN }}
+
+      - name: Detect version
+        run: |
+          echo "VERSION=$(cat VERSION | xargs)" >> $GITHUB_ENV
+
+      - name: Release
+        run: |
+          GH_TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          if gh release view v${VERSION} > /dev/null 2>&1; then
+            echo "Release v${VERSION} already exists. Skipping"
+          else
+            echo "Creating release: v${VERSION}"
+            ./gradlew publish
+            ./gradlew release
+          fi
+        env:
+          GITHUB_USER: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
