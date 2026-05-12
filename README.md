@@ -1,4 +1,5 @@
-# tiny-prometheus
+# tiny-prometheus ![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Ftarmolehtpuu%2Fc4dcc625848d9d5fe24d9671308939e4%2Fraw%2Ff049433b9f8896eab32731c13a325b571e6b7dfe%2Ftiny-prometheus-junit-tests.json) ![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Ftarmolehtpuu%2Fc4dcc625848d9d5fe24d9671308939e4%2Fraw%2Ff049433b9f8896eab32731c13a325b571e6b7dfe%2Ftiny-prometheus-jacoco-coverage.json)
+
 
 Tiny Prometheus library for use in apps (mainly expoters) built with GraalVM Native Image. This library uses no reflection
 and is very tiny.
@@ -62,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    implementation("ee.moo:tiny-json:0.0.1")
+    implementation("ee.moo:tiny-prometheus:0.0.1")
 }
 ```
 
