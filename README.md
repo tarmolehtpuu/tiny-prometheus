@@ -42,7 +42,7 @@ a future version.
     <dependency>
         <groupId>ee.moo</groupId>
         <artifactId>tiny-prometheus</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.2</version>
     </dependency>
 </dependencies>
 ```
@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    implementation("ee.moo:tiny-prometheus:0.0.1")
+    implementation("ee.moo:tiny-prometheus:0.0.2")
 }
 ```
 
