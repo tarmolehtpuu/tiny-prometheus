@@ -52,7 +52,7 @@ tasks.jar {
     from(project.rootDir) {
         include("LICENSE")
         include("NOTICE")
-        include("META-INF")
+        into("META-INF")
     }
 
     from(sourceSets.main.get().output)
