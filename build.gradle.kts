@@ -45,6 +45,25 @@ tasks.withType<JavaCompile> {
     options.release.set(17)
 }
 
+tasks.register("version") {
+    description = "Update project version"
+    group = "release"
+
+    val r = Regex("""(?<!\d\.)\b\d+\.\d+\.\d+\b(?!\.\d)""")
+    val v = project.findProperty("v") as String?
+        ?: throw GradleException("Property v is missing. Usage: ./gradlew version -Pv=X.Y.Z")
+
+    doLast {
+        listOf(
+            file("VERSION"),
+            file("README.md"),
+        ).forEach { file ->
+            file.writeText(file.readText().replace(r, v))
+            println("Updated to version: $v (${file.name})")
+        }
+    }
+}
+
 tasks.jar {
     archiveBaseName.set(project.name)
     archiveVersion.set(project.version.toString())
