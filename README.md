@@ -15,26 +15,11 @@ a future version.
 
 ### Maven
 
-#### ~/.m2/settings.xml
-```xml
-<settings>
-    <servers>
-        <server>
-            <id>github</id>
-            <username>GITHUB_USERNAME</username>
-            <password>GITHUB_TOKEN</password>
-        </server>
-    </servers>
-</settings>
-```
-
-#### pom.xml
-
 ```xml
 <repositories>
     <repository>
-        <id>github</id>
-        <url>https://maven.pkg.github.com/tarmolehtpuu/tiny-prometheus</url>
+        <id>moo</id>
+        <url>https://repo.repsy.io/moo/maven</url>
     </repository>
 </repositories>
 
@@ -53,12 +38,8 @@ a future version.
 repositories {
     mavenCentral()
     maven {
-        name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/tarmolehtpuu/tiny-prometheus")
-        credentials {
-            username = project.findProperty("github.user") as String? ?: System.getenv("GITHUB_USER")
-            password = project.findProperty("github.token") as String? ?: System.getenv("GITHUB_TOKEN")
-        }
+        name = "moo"
+        url = uri("https://repo.repsy.io/moo/maven")
     }
 }
 

@@ -90,11 +90,11 @@ tasks.jar {
 publishing {
     repositories {
         maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/tarmolehtpuu/tiny-prometheus")
+            name = "moo"
+            url = uri("https://repo.repsy.io/moo/maven")
             credentials {
-                username = project.findProperty("github.user") as String? ?: System.getenv("GITHUB_USER")
-                password = project.findProperty("github.token") as String? ?: System.getenv("GITHUB_TOKEN")
+                username = project.findProperty("maven.user") as String? ?: System.getenv("MAVEN_USER")
+                password = project.findProperty("maven.token") as String? ?: System.getenv("MAVEN_TOKEN")
             }
         }
         publications {
