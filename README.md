@@ -1,4 +1,4 @@
-# tiny-prometheus ![Static Badge](https://img.shields.io/badge/version-0.0.5-blue) ![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Ftarmolehtpuu%2Fc4dcc625848d9d5fe24d9671308939e4%2Fraw%2Ff049433b9f8896eab32731c13a325b571e6b7dfe%2Ftiny-prometheus-junit-tests.json) ![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Ftarmolehtpuu%2Fc4dcc625848d9d5fe24d9671308939e4%2Fraw%2Ff049433b9f8896eab32731c13a325b571e6b7dfe%2Ftiny-prometheus-jacoco-coverage.json)
+# tiny-prometheus ![Static Badge](https://img.shields.io/badge/version-0.0.6-blue) ![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Ftarmolehtpuu%2Fc4dcc625848d9d5fe24d9671308939e4%2Fraw%2Ff049433b9f8896eab32731c13a325b571e6b7dfe%2Ftiny-prometheus-junit-tests.json) ![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Ftarmolehtpuu%2Fc4dcc625848d9d5fe24d9671308939e4%2Fraw%2Ff049433b9f8896eab32731c13a325b571e6b7dfe%2Ftiny-prometheus-jacoco-coverage.json)
 
 
 Tiny Prometheus library for use in apps (mainly expoters) built with GraalVM Native Image. This library uses no reflection
@@ -8,7 +8,7 @@ Supported metric types:
 - counter
 - gauge
 
-Supports exporting metrics in Prometheus format (version 0.0.5). Also planning to add some simple query methods in
+Supports exporting metrics in Prometheus format (version 0.0.6). Also planning to add some simple query methods in
 a future version.
 
 ## Import
@@ -27,7 +27,7 @@ a future version.
     <dependency>
         <groupId>ee.moo</groupId>
         <artifactId>tiny-prometheus</artifactId>
-        <version>0.0.5</version>
+        <version>0.0.6</version>
     </dependency>
 </dependencies>
 ```
@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    implementation("ee.moo:tiny-prometheus:0.0.5")
+    implementation("ee.moo:tiny-prometheus:0.0.6")
 }
 ```
 
