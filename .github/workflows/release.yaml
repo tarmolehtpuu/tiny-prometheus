@@ -55,6 +55,6 @@ jobs:
           fi
         env:
           MAVEN_USER: ${{ vars.MAVEN_USER }}
-          MAVEN_TOKEN: ${{ vars.MAVEN_TOKEN }}
+          MAVEN_TOKEN: ${{ secrets.MAVEN_TOKEN }}
           GITHUB_USER: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
